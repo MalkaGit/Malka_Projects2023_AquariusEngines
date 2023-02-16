@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IotSimulator.Services.SignalGenerators
 {
-    internal class StateGeneratorConfig : ISimulatorConfig
+    internal class StateGeneratorConfig : ISignalGeneratorConfig
     {
         public int NormalIntervalInMs { get; set; }
         public int MinAbnormalIntervalInMs { get; set; }
