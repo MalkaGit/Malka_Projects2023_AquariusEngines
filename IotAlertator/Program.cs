@@ -17,8 +17,12 @@ StateMessageValidatorConfig     stateConfig         = new StateMessageValidatorC
 MessageValidatorsFactory        validatorFactory    = new MessageValidatorsFactory(sineConfig, stateConfig);
 
 
-SqlRepositoryConfig repositryConfig = new SqlRepositoryConfig() { ConnectionString = "Server=DESKTOP-LU6BPF1\\SQLEXPRESS;Database=Research;Trusted_Connection=True;MultipleActiveResultSets=true" };
-IRepository repository = new SQLRepository(repositryConfig);
+
+WebClientRepositoryConfig webClientRepositoryConfig = new WebClientRepositoryConfig() { BaseAddress = "http://localhost:5028" };
+IRepository repository = new WebClientRepository(webClientRepositoryConfig);
+
+//SqlRepositoryConfig repositryConfig = new SqlRepositoryConfig() { ConnectionString = "Server=DESKTOP-LU6BPF1\\SQLEXPRESS;Database=Research;Trusted_Connection=True;MultipleActiveResultSets=true" };
+//IRepository repository = new SQLRepository(repositryConfig);
 
 
 IMessageHandler messageHandler       = new MessageHandler(validatorFactory.GetValidatorsMap(),repository);
@@ -26,5 +30,8 @@ IMessageHandler messageHandler       = new MessageHandler(validatorFactory.GetVa
 
 KafkaConsumerConfig consumerConfig  = new KafkaConsumerConfig() { BootstrapServers = "127.0.0.1:9092", TopicName = "ae_messages" };
 IConsumer consumer                  = new KafkaConsumer(cts.Token,consumerConfig, messageHandler);
+
+
+
 consumer.Start();
 Console.WriteLine($"Started consumer, Ctrl-C to stop consuming");

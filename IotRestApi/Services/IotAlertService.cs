@@ -1,5 +1,7 @@
-﻿using IotRestApi.Model;
+﻿using IotRestApi.Config;
+using IotRestApi.Model;
 using IotRestApi.Repository;
+using System.Data.SqlClient;
 
 namespace IotRestApi.Services
 {
@@ -20,5 +22,9 @@ namespace IotRestApi.Services
             return _repository.GetIotAlerts(pageNumber, pageSize, orderBy, asc);
         }
 
+        public int CreateIotAlert(IotAlert iotAlert)
+        {
+            return _repository.CreateIotAlert(iotAlert);
+        }
     }
 }

@@ -38,5 +38,24 @@ namespace IotRestApi.Repository
             }
 
         }
+
+
+        public int CreateIotAlert(IotAlert iotAlert)
+        {
+            try
+            {
+                string sqlQuery = $"INSERT INTO AeIotAlerts (SensorId,SignalTime,SignalValue,SignalType) VALUES({iotAlert.SensorId}, '{iotAlert.SignalTime.ToString("yyyy-MM-dd HH:mm:ss")}', {iotAlert.SignalValue}, {(int)iotAlert.SignalType} )";
+                using (var conn = new SqlConnection(_sqlRepositoryConfig.ConnectionString))
+                {
+                    var rowsAffected = conn.Execute(sqlQuery, iotAlert);
+                    return rowsAffected;
+                }
+            }
+            catch (Exception ex)
+            {
+                //TODO: log
+                return 0;
+            }
+        }
     }
 }

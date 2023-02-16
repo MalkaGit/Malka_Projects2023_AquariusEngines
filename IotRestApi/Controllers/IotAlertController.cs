@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IotRestApi.Controllers
 {
+    //https://www.tutorialsteacher.com/webapi/implement-post-method-in-web-api
     [ApiController]
     [Route("[controller]")]
     public class IotAlertController : ControllerBase
@@ -23,5 +24,14 @@ namespace IotRestApi.Controllers
             return _service.GetIotAlerts(pageNumber,  pageSize,  orderBy,  asc);
 
         }
+
+
+        [HttpPost(Name = "PostIotAlert")]
+        public int Post (IotAlert iotAlert)
+        {
+            return _service.CreateIotAlert(iotAlert);
+
+        }
     }
 }
+

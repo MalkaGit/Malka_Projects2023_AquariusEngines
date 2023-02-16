@@ -21,6 +21,13 @@ namespace IotSimulator.Services.SignalGenerators
             _random = new Random();
         }
 
+        //dupilicated ...
+        //alternatives:
+        //  option1: leave duplicated (simple, decouple),
+        //  option2: componsition see- 
+        //  option3: inheritance :-(,  move to abstract base class
+
+
         public async Task Start(int sensorId)
         {
             bool createNormalValue;
