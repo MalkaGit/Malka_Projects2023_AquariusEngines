@@ -1,0 +1,41 @@
+1	IOT device in the field:
+	a. In the normal case, 
+	the device is transmitting the following sampled signals every 2 mSec:
+		i. “Sine” - Sine function (See illustration here):
+			1. Frequency of 100Hz.
+			2. Amplitude between 0V and 32V.
+		ii. “State” - Random discrete values (See illustration here):
+			1. Values within the range of [256, 4095].
+	b. Anomaly generator:
+		i. Generates “out of bound” values for each of the signals (independently), every random period 
+			of [2,5] seconds (“Out of bound = replace the correct value with a “corrupted value”).
+
+2. Server-side application:
+a. Receives the traffic from the device in the field.
+b. Stores it in a simple DB structure:
+	i. Timestamp.
+	ii. Value.
+	iii. Type (“Sine”, “State”).
+c. Performs simple logic to discover anomalies as follows:
+	i. For the sine wave:
+	If an unexpected value (out of the sine wave boundaries) – raise an “Alarm” event 
+	(will be presented in GUI).
+	ii. For the “State” signal:
+	If an unexpected value (out of the “State” signal boundaries) – raise an “Alarm” event 
+	(will be presented in GUI).
+
+d. Displays the results in a simple GUI as follows:
+	i. Alarm table:
+		1. Timestamp.
+		2. Anomaly value.
+		3. Signal type (“Sine”, “State”).
+	ii. Two graphs (“Sine”, “State”) containing the last 100 readings. [Optional]
+	iii. All data refreshes once a second.
+
+Please implement the following system, 
+using any programming languages for your choice, in the cleanest & 
+most readable code you can.
+
+Please submit the source code, executables 
+and provide simple instructions how to operate the system. 
+(*) Important - Do not submit language modules (node_modules, maven, etc.).

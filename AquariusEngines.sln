@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotSimulator", "IotSimulator\IotSimulator.csproj", "{399E2998-2D7E-4F26-BCC8-D64001290F8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13A597B1-85F9-4612-B9C2-B36DF9259AFD}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+		Requirement.txt = Requirement.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotAlertator", "IotAlertator\IotAlertator.csproj", "{221C2B5B-3CC1-45E8-B6D2-629E0F669483}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IotRestApi", "IotRestApi\IotRestApi.csproj", "{17CA2912-3AA2-4432-B6C0-DFF9529FAF5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{399E2998-2D7E-4F26-BCC8-D64001290F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{399E2998-2D7E-4F26-BCC8-D64001290F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{399E2998-2D7E-4F26-BCC8-D64001290F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{399E2998-2D7E-4F26-BCC8-D64001290F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{221C2B5B-3CC1-45E8-B6D2-629E0F669483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{221C2B5B-3CC1-45E8-B6D2-629E0F669483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{221C2B5B-3CC1-45E8-B6D2-629E0F669483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{221C2B5B-3CC1-45E8-B6D2-629E0F669483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17CA2912-3AA2-4432-B6C0-DFF9529FAF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17CA2912-3AA2-4432-B6C0-DFF9529FAF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17CA2912-3AA2-4432-B6C0-DFF9529FAF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17CA2912-3AA2-4432-B6C0-DFF9529FAF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAC55B45-7292-4AB2-856A-10BC30412A94}
+	EndGlobalSection
+EndGlobal
